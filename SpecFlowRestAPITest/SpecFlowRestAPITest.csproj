@@ -61,6 +61,10 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="app.config" />
+    <None Include="Features\Locations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Locations.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utilities\Data.cs" />
@@ -68,11 +72,17 @@
     <Compile Include="Objects\LocationResponse.cs" />
     <Compile Include="Objects\Place.cs" />
     <Compile Include="Tests\ZipCode.cs" />
+    <Compile Include="Features\Locations.feature.cs">
+      <DependentUpon>Locations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="StepDefinitions\LocationsStepDef.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
     <Folder Include="Utilities\" />
     <Folder Include="Objects\" />
+    <Folder Include="Features\" />
+    <Folder Include="StepDefinitions\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
